@@ -3,7 +3,6 @@ FROM node:7.2
 MAINTAINER Oleg Shalygin <oshalygin@gmail.com>
 
 # Global install yarn package manager
-RUN curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add -
-echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list
+RUN curl -o- -L https://yarnpkg.com/install.sh | bash
 
 WORKDIR /workspace
